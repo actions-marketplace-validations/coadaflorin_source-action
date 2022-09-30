@@ -4,7 +4,13 @@ author: 'Florin'
 branding:
   color: 'blue'
   icon: 'lock'  
+inputs:
+  script-file:
+    description: 'AppScan Source script file'
+    required: true
 
 runs:
   using: 'docker'
   image: 'docker://hclcr.io/appscan/appscan-src-cli:10.0.8'
+  args:
+    - script ${{inputs.script-file}}
