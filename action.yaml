@@ -1,5 +1,6 @@
 name: 'HCL AppScan CodeSweep'
 description: 'Scan for security issues in code'
+author: 'Florin' 
 branding:
   color: 'blue'
   icon: 'lock'  
