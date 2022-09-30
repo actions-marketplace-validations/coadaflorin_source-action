@@ -1,1 +1,1 @@
-# source-action
+# AppScan Source CLI - GitHub action
