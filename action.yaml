@@ -1,4 +1,4 @@
-name: 'HCL AppScan CodeSweep'
+name: 'HCL AppScan Source'
 description: 'Scan for security issues in code'
 author: 'Florin' 
 branding:
@@ -14,4 +14,3 @@ runs:
   image: 'docker://hclcr.io/appscan/appscan-src-cli:10.0.8'
   args:
     - script /github/workspace/${{inputs.script-file}}
-    - --user root
