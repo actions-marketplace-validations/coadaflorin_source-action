@@ -14,3 +14,4 @@ runs:
   image: 'docker://hclcr.io/appscan/appscan-src-cli:10.0.8'
   args:
     - script /github/workspace/${{inputs.script-file}}
+    - --user root
