@@ -6,8 +6,6 @@ More details about the container can be found here: https://help.hcltechsw.com/a
 This container leverages the AppScan Source command line interface (CLI). A detailed description of the capabilities of the CLI can be found here: 
 https://help.hcltechsw.com/appscan/Source/10.0.8/topics/command_line_interface_commands.html 
 
-This version of the action is set to work with AppScan Source 10.0.8. The goal is to always be on the latest version. 
-
 ### Important topics to know: 
 * In order to scan a project you need to have an application already available. That can be a .war,.ear format or needs to be in an AppScan Source specific format (.paf). The application can be configured with the help of AppScan Source for Analysis. 
 
@@ -55,7 +53,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         
-      - name: Run AppScan Static Analyzer
+      - name: Run AppScan Source scan
         uses: coadaflorin/source-action@main
         with:
           script-file: source-cli.script   #the name & location of your script file relative to your repo
@@ -64,13 +62,50 @@ jobs:
             AS_LICENSE_SERVER_ID: ${{secrets.SERVER_ID}}
             AS_INSTALL_MODE: 'standalone'
 ```     
-The The list parameter you can set for your action can be found here [Supported configuration when creating an AppScan Source CLI container](https://help.hcltechsw.com/appscan/Source/10.0.8/topics/configure_docker_supported_configurations.html)
+The list of supported env parameter you can set for your action can be found here [Supported configuration when creating an AppScan Source CLI container](https://help.hcltechsw.com/appscan/Source/10.0.8/topics/configure_docker_supported_configurations.html)
 
 
-3. Configure the files you want to save at the end of your scan process. You 
+3. Configure the files you want to save at the end of your scan process. You can save an entire folder or invividual files you have in there. As a best practice I recommend saving the script file and the results (.ozasmt & report) in case you need to audit things later on. 
 ```yaml
       - name: Archive scan results
         uses: actions/upload-artifact@v3
         with:
           name: appscan-source-results
-          path: .appscan_source/```
+          path: .appscan_source/
+```
+
+## Trigger your first scan
+You can now head over to your actions page, select the AppScan Source action and trigger your first run. 
+![image](https://user-images.githubusercontent.com/12701547/193832395-36b8ac7f-040a-4c8f-a18e-dbae8985dcfe.png)
+
+If your scan was successfull you should see something like this at the end: 
+```shell
+Scanned application AltoroJ.war : File(s) scanned: 52 Lines scanned: 4847 Total findings: 96
+Scan completed: File(s) scanned: 52 Lines scanned: 4847 Total findings: 96
+Elapsed Time - 0 Hour(s) 3 Minute(s) 14 Second(s)
+
+	-------------------
+	Total Call Sites: 96
+	Total Definitive Security Findings with High Severity: 76
+	Total Definitive Security Findings with Medium Severity: 6
+	Total Definitive Security Findings with Low Severity: 0
+	Total Suspect Security Findings with High Severity: 10
+	Total Suspect Security Findings with Medium Severity: 4
+	Total Suspect Security Findings with Low Severity: 0
+	Total Scan Coverage Findings with High Severity: 0
+	Total Scan Coverage Findings with Medium Severity: 0
+	Total Scan Coverage Findings with Low Severity: 0
+  ```
+  
+  After your AppScan Task completes, you should have ```appscan-source-results``` in your artefacts. This will have the content you defined during the previous step 3. 
+  ![image](https://user-images.githubusercontent.com/12701547/193832895-5b46542d-2d61-4ecc-8989-7cb76e157149.png)
+
+
+## Versioning 
+This ```main``` version of the action is set to work with AppScan Source 10.0.8. The goal is to have main on the latest version. 
+
+To allow using older versions of the product, when a new version is out a new branch will be created for that specific version. Should you in the future want to run a scan with version **10.0.8** of HCL AppScan Source, simply use:
+```yaml
+      - name: Run AppScan Source scan
+        uses: coadaflorin/source-action@10.0.8
+```
