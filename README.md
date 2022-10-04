@@ -109,3 +109,8 @@ To allow using older versions of the product, when a new version is out a new br
       - name: Run AppScan Source scan
         uses: coadaflorin/source-action@10.0.8
 ```
+
+
+## Sample 
+A sample configuration process can be found here: 
+https://github.com/coadaflorin/appscan_api_Demo
