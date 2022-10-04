@@ -12,10 +12,10 @@ https://help.hcltechsw.com/appscan/Source/10.0.8/topics/command_line_interface_c
 * This action leverages the ```script``` command. This allows you to execute a pre-configured script automatically. You will need to have this script file available in your repo so that the container can access it. More details about how the file can be configured can be found here: https://help.hcltechsw.com/appscan/Source/10.0.8/topics/command_line_interface_commands_script.html. 
 
 * The action will load the script file and execute the instruction in there. Some of the most basic steps you need in order to run a scan are: 
-  1. ```login``` - his will perform the licensing check (https://help.hcltechsw.com/appscan/Source/10.0.8/topics/command_line_interface_commands_login.html) 
-  2. ```openapplication``` - select the application configuration to use (https://help.hcltechsw.com/appscan/Source/10.0.8/topics/command_line_interface_commands_openapplication.html) 
-  3. ```scan``` - as the name implies it will run the scan and optionally save an HCL AppScan Source assessment file (https://help.hcltechsw.com/appscan/Source/10.0.8/topics/command_line_interface_commands_scan.html?hl=scan) 
-  4. ```report``` - which will generate a report for you (https://help.hcltechsw.com/appscan/Source/10.0.8/topics/command_line_interface_commands_report.html) 
+  1. ```login``` - his will perform the licensing check [login command documentation](https://help.hcltechsw.com/appscan/Source/10.0.8/topics/command_line_interface_commands_login.html) 
+  2. ```openapplication``` - select the application configuration to use [openapplication command documentation](https://help.hcltechsw.com/appscan/Source/10.0.8/topics/command_line_interface_commands_openapplication.html) 
+  3. ```scan``` - as the name implies it will run the scan and optionally save an HCL AppScan Source assessment file [scan command documentation](https://help.hcltechsw.com/appscan/Source/10.0.8/topics/command_line_interface_commands_scan.html?hl=scan) 
+  4. ```report``` - which will generate a report for you [report command documentation](https://help.hcltechsw.com/appscan/Source/10.0.8/topics/command_line_interface_commands_report.html) 
   5. ```quit``` #release the license 
   
 A sample of your script could look something like this:
