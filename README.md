@@ -26,6 +26,6 @@ A sample of your script could look something like this:
   report "OWASP Top 10 2021" pdf-summary /github/workspace/.appscan_source/scan_report.pdf
   quit
   ```
-The path ```/github/workspace/``` is where your code is loaded. Use the full path to your application config in there. 
+The path ```/github/workspace/``` is where your code is loaded. Use the full path to your application config in there. If let's say you build something locally in ```<project>/build/libs```, the path you'll need to point in your config is ```/github/workspace/build/libs```. 
   
 **NOTE**: *In the script above we're using ```.appscan_source``` as a location to save scan file. This is a project specific location. You can use any location you chose, make sure to remember where you save your artefacts so we can retrieve them later.* 
