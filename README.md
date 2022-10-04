@@ -1,4 +1,4 @@
-# AppScan Source CLI - GitHub action
+# HCL AppScan Source CLI - GitHub action
 
 This is an HCL AppScan Source GitHub action based on the AppScan Source CLI container. 
 More details about the container can be found here: https://help.hcltechsw.com/appscan/Source/10.0.8/topics/configure_creating_containers_docker.html
@@ -43,7 +43,7 @@ After you configured the AppScan script, it's time to configure the AppScan Acti
 
 2. Create your new action and use the following base configuration.
 ```yaml
-name: "AppScan Source Action"
+name: "HCL AppScan Source Action"
 on:
   workflow_dispatch #manually trigger the action 
 jobs:
