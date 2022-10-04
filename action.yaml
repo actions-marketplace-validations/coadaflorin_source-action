@@ -3,7 +3,7 @@ description: 'Scan for security issues in code'
 author: 'Florin' 
 branding:
   color: 'blue'
-  icon: 'lock'  
+  icon: 'shield'  
 inputs:
   script-file:
     description: 'AppScan Source script file'
